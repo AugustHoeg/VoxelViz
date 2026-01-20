@@ -26,7 +26,7 @@ class OMEZarrProgressiveViewer:
 
         # resolution levels: 0 is highest, higher numbers are lower resolution
         self.HIGH_RES = 0
-        self.DEBOUNCE_TIME = 0.2  # Wait 0.2s before starting to sharpen
+        self.DEBOUNCE_TIME = 0.5  # Wait 0.2s before starting to sharpen
 
         self.sliders = []
         self.views = []
