@@ -1,5 +1,6 @@
 import os
 import io
+import argparse
 import time
 import zarr
 import numpy as np
@@ -13,6 +14,11 @@ from ome_zarr.reader import Reader
 # Path to your .zarr root
 OME_PATH = "../Vedrana_master_project/3D_datasets/datasets/VoDaSuRe/Oak_A/output_ome.zarr"
 
+def parse_arguments():
+    parser = argparse.ArgumentParser(description="OME-Zarr Progressive Ortho-Viewer")
+    parser.add_argument('--ome_path', type=str, default=OME_PATH, help='Path to the OME-Zarr root directory')
+    args = parser.parse_args()
+    return args
 
 class OMEZarrOrthoViewer:
     def __init__(self, zarr_root_path):
@@ -194,5 +200,6 @@ class OMEZarrOrthoViewer:
 
 # --- Execution ---
 if __name__ in {"__main__", "__mp_main__"}:
-    viewer = OMEZarrOrthoViewer(OME_PATH)
+    args = parse_arguments()
+    viewer = OMEZarrOrthoViewer(args.ome_path)
     ui.run(title="VoxelViz OME-Zarr", port=8080)
