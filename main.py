@@ -26,7 +26,7 @@ class OMEZarrProgressiveViewer:
 
         # resolution levels: 0 is highest, higher numbers are lower resolution
         self.HIGH_RES = 0
-        self.DEBOUNCE_TIME = 0.5  # Wait 0.2s before starting to sharpen
+        self.DEBOUNCE_TIME = 0.3  # Wait 0.3s before starting to sharpen
 
         self.sliders = []
         self.views = []
@@ -57,7 +57,7 @@ class OMEZarrProgressiveViewer:
                         lbl = ui.label().classes('text-xs font-mono text-gray-600 mt-[-10px]')
                         self.slice_labels.append(lbl)
 
-        ui.timer(0.025, self.update_loop)
+        ui.timer(0.05, self.update_loop)
         self.update_label_text()
         self.force_refresh()
 
