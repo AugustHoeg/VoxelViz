@@ -1,0 +1,13 @@
+nicegui
+ome-zarr
+dask
+zarr
+numpy
+scikit-image
+opencv-python
+scipy
+plotly
+pandas
+numba
+joblib
+tqdm
