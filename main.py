@@ -1,4 +1,5 @@
 import os
+import argparse
 import time
 import zarr
 import numpy as np
@@ -11,6 +12,11 @@ from ome_zarr.reader import Reader
 # Configuration
 ome_path = "../Vedrana_master_project/3D_datasets/datasets/VoDaSuRe/Oak_A/output_ome.zarr"
 
+def parse_arguments():
+    parser = argparse.ArgumentParser(description="OME-Zarr Viewer")
+    parser.add_argument('--ome_path', type=str, default=ome_path, help='Path to the OME-Zarr root directory')
+    args = parser.parse_args()
+    return args
 
 class OMEZarrProgressiveViewer:
     def __init__(self, zarr_root_path):
@@ -144,5 +150,8 @@ class OMEZarrProgressiveViewer:
 
 
 if __name__ in {"__main__", "__mp_main__"}:
-    viewer = OMEZarrProgressiveViewer(ome_path)
+
+    args = parse_arguments()
+
+    viewer = OMEZarrProgressiveViewer(args.ome_path)
     ui.run()
