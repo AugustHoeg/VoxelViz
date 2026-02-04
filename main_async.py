@@ -16,7 +16,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 # --- Configuration ---
 # Path to your .zarr root
-OME_PATH = "../Vedrana_master_project/3D_datasets/datasets/VoDaSuRe/Oak_A/output_ome.zarr"
+OME_PATH = "/dtu/3d-imaging-center/projects/2025_DANFIX_163_VoDaSuRe/raw_data_extern/Polaris/recon/forams_A_LR.zarr/raw" # "../Vedrana_master_project/3D_datasets/datasets/VoDaSuRe/Oak_A/output_ome.zarr"
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="OME-Zarr Progressive Ortho-Viewer")
